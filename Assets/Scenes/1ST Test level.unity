@@ -26056,6 +26056,14 @@ PrefabInstance:
       propertyPath: GravityModifier.Array.data[4].y
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7726683022028574535, guid: 50f8eeeee437542fcb8720e94c230aaf, type: 3}
+      propertyPath: FrictionMultiplier
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7726683022028574535, guid: 50f8eeeee437542fcb8720e94c230aaf, type: 3}
+      propertyPath: ForwardSpeedLerp
+      value: 50
+      objectReference: {fileID: 0}
     - target: {fileID: 7726683022028574536, guid: 50f8eeeee437542fcb8720e94c230aaf, type: 3}
       propertyPath: m_DynamicOccludee
       value: 0

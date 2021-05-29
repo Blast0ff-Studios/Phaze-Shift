@@ -43,6 +43,7 @@ public class PlayerMove : MonoBehaviour
     public float ForwardBackMultiplier;
     public float LeftRightMultiplier;
     public float MaxSpeed;
+    public float ForwardSpeedLerp;
     public float FrictionMultiplier;
     public float StrafeSpeedY;
     public float StrafeSpeedX;
@@ -270,7 +271,7 @@ public class PlayerMove : MonoBehaviour
 
                 if (rb.velocity.magnitude > MaxSpeed)
                 {
-                    rb.velocity = Vector3.Lerp(rb.velocity, rb.velocity.normalized * MaxSpeed, 35 * Time.deltaTime);
+                    rb.velocity = Vector3.Lerp(rb.velocity, rb.velocity.normalized * MaxSpeed, ForwardSpeedLerp * Time.deltaTime);
                     rb.velocity = new Vector3(rb.velocity.x, V, rb.velocity.z);
                 }
             }
@@ -534,7 +535,7 @@ public class PlayerMove : MonoBehaviour
     {
         if (GroundedTime > 0.17f && x == 0 && y == 0)
         {
-            rb.velocity *= FrictionMultiplier;
+            rb.velocity -= rb.velocity * Time.deltaTime / FrictionMultiplier;
         }
     }
 }
